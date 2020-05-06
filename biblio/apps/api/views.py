@@ -51,7 +51,7 @@ class FavoriteViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
 
     def get_queryset(self):
-        queryset = Favorite.objects.all().filter(owner=self.request.user)
+        queryset = Book.objects.all().filter(owner=self.request.user, is_favorite=True)
         return queryset
 
     serializer_class = FavoritesSerializer

@@ -10,8 +10,8 @@ router.register('favorites', FavoriteViewSet, basename='favorites')
 
 custom_urlpatterns = [
     url(r'books/(?P<book_pk>\d+)/favorites$', BookFavorites.as_view(), name='book_favorites'),
-    url(r'^public/$', PublicBooks.as_view(), name='public_favorite'),
-    url(r'^public/(?P<pk>\d+)/$', PublicBookView.as_view(), name='public_favorites_view')
+    url(r'^public/$', PublicBooks.as_view(), name='public_books'),
+    url(r'^public/(?P<pk>\d+)/$', PublicBookView.as_view(), name='public_books_view')
 ]
 
 urlpatterns = router.urls
