@@ -21,8 +21,8 @@ class FavoritesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Favorite
-        fields = ('id', 'books', 'owner', 'title',
-                  'author', 'title',
+        fields = ('id', 'books', 'title',
+                  'author', 'title', 'genre',
                   'pages', 'published', 'publisher',
                   'description', 'is_favorite', 'is_public',
                   'created_at', 'updated_at',

@@ -6,6 +6,7 @@ class Favorite(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
+    genre = models.CharField(max_length=100)
 
     pages = models.IntegerField(default=0)
     publisher = models.CharField(max_length=100, blank=True, default='')
