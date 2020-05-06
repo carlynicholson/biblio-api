@@ -5,12 +5,11 @@ from ..api.models import (
 
 
 class BookSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Book
         fields = ('id', 'title', 'author',
-                  'owner', 'genre', 'pages',
+                  'genre', 'pages',
                   'published', 'publisher',
                   'description', 'is_favorite',
                   'is_public')

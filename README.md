@@ -14,7 +14,7 @@ Build a simple Django restful API. Have at least 1 model with full CRUD function
 ## Code Snippet 
 Implementation of Books model
 
-```
+```PYTHON
 class Book(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -25,8 +25,28 @@ class Book(models.Model):
     publisher = models.CharField(max_length=100, blank=True, default='')
     published = models.IntegerField()
     description = models.TextField()
+    
     is_favorite = models.BooleanField(default=False)
     is_public = models.BooleanField(default=True)
+```
+
+Example JSON output
+```JSON
+[
+    {
+        "id": 3,
+        "title": "Dandelion Wine",
+        "author": "Ray Bradbury",
+        "owner": "founder",
+        "genre": "Fiction",
+        "pages": 239,
+        "published": 1976,
+        "publisher": "Spectra",
+        "description": "In the unusual world of Green Town, Illinois, a twelve-year-old discovers the wonders of reality and the power of imagination during the summer of 1928.",
+        "is_favorite": true,
+        "is_public": true
+    }
+]
 ```
 
 ## Package Installation
