@@ -20,12 +20,24 @@ class Book(models.Model):
 
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
-    genre = models.CharField(max_length=100, blank=True, default='')
+
+    FICTION = 'FIC'
+    NONFICTION = 'NON'
+    GENRE_CHOICES = [
+        (FICTION, 'Fiction'),
+        (NONFICTION, 'Nonfiction'),
+    ]
+    genre = models.CharField(
+        max_length=10,
+        choices=GENRE_CHOICES,
+        default='',
+    )
+
     pages = models.IntegerField(default=0)
     publisher = models.CharField(max_length=100, blank=True, default='')
     published = models.IntegerField()
     description = models.TextField()
-    
+
     is_favorite = models.BooleanField(default=False)
     is_public = models.BooleanField(default=True)
 ```
