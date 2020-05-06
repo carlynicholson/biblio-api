@@ -10,9 +10,10 @@ class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
         fields = ('id', 'title', 'author',
-                  'owner', 'favorite', 'pages',
-                  'published', 'description',
-                  'is_favorite', 'is_public')
+                  'owner', 'genre', 'pages',
+                  'published', 'publisher',
+                  'description', 'is_favorite',
+                  'is_public')
 
 
 class FavoritesSerializer(serializers.ModelSerializer):
